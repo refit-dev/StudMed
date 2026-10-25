@@ -21,7 +21,7 @@ export async function POST(request: Request) {
       mode: 'subscription',
       customer_email: request.headers.get('email') ?? '',
       // cartao, pix
-      payment_method_types: ['card'],
+      allowed_payment_method_types: ['card'],
       return_url: `${request.headers.get(
         'origin'
       )}/payment-confirmation?session_id={CHECKOUT_SESSION_ID}`,
